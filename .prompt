@@ -85,8 +85,10 @@ export HIWHITE
 PS2="\[${BLUE}\]>$RESET "
 PS4='\[${HICYAN}\]+$RESET '
 
-if [ -f "/opt/bash-git-prompt/gitprompt.sh" ]; then
-    source "/opt/bash-git-prompt/gitprompt.sh"
+GIT_PROMPT_THEME=Custom
+
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
 else
     SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
     SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
