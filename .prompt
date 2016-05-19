@@ -1,0 +1,97 @@
+#!/bin/bash                                                                                                                                      
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color > /dev/null 2>&1; then
+    export TERM=gnome-256color
+elif infocmp xterm-256color > /dev/null 2>&1; then
+    export TERM=xterm-256color
+fi
+
+if tput setaf 1 &> /dev/null; then
+    RESET=$(tput sgr0)
+    if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+        BLACK="$(tput setaf 233)"
+        RED="$(tput setaf 160)"
+        GREEN="$(tput setaf 64)"
+        YELLOW="$(tput setaf 94)"
+        BLUE="$(tput setaf 26)"
+        MAGENTA="$(tput setaf 96)"
+        CYAN="$(tput setaf 26)"
+        WHITE="$(tput setaf 248)"
+        HIBLACK="$(tput setaf 240)"
+        HIRED="$(tput setaf 197)"
+        HIGREEN="$(tput setaf 71)"
+        HIYELLOW="$(tput setaf 228)"
+        HIBLUE="$(tput setaf 195)"
+        HIMAGENTA="$(tput setaf 219)"
+        HICYAN="$(tput setaf 39)"
+        HIWHITE="$(tput setaf 255)"
+    else
+        bold="$(tput bold)"
+        BLACK="$(tput setaf 0)"
+        RED="$(tput setaf 1)"
+        GREEN="$(tput setaf 2)"
+        YELLOW="$(tput setaf 3)"
+        BLUE="$(tput setaf 4)"
+        MAGENTA="$(tput setaf 5)"
+        CYAN="$(tput setaf 6)"
+        WHITE="$(tput setaf 7)"
+        HIBLACK="${bold}${BLACK}"
+        HIRED="${bold}${RED}"
+        HIGREEN="${bold}${GREEN}"
+        HIYELLOW="${bold}${YELLOW}"
+        HIBLUE="${bold}${BLUE}"
+        HIMAGENTA="${bold}${MAGENTA}"
+        HICYAN="${bold}${CYAN}"
+        HIWHITE="${bold}${WHITE}"
+        unset bold                                                                                                                               
+    fi
+else
+    RESET="\e[m"
+    BLACK="\e[30m"
+    RED="\e[31m"
+    GREEN="\e[32m"
+    YELLOW="\e[33m"
+    BLUE="\e[34m"
+    MAGENTA="\e[35m"
+    CYAN="\e[36m"
+    WHITE="\e[37m"
+    HIBLACK="\e[30;1m"
+    HIRED="\e[31;1m"
+    HIGREEN="\e[32;1m"
+    HIYELLOW="\e[33;1m"
+    HIBLUE="\e[34;1m"
+    HIMAGENTA="\e[35;1m"
+    HICYAN="\e[36;1m"
+    HIWHITE="\e[37;1m"
+fi
+
+export RESET
+export BLACK
+export RED
+export GREEN
+export YELLOW
+export BLUE
+export MAGENTA
+export CYAN
+export WHITE
+export HIBLACK
+export HIRED
+export HIGREEN
+export HIYELLOW
+export HIBLUE
+export HIMAGENTA
+export HICYAN
+export HIWHITE
+
+PS2="\[${BLUE}\]>$RESET "
+PS4='\[${HICYAN}\]+$RESET '
+
+if [ -f "/opt/bash-git-prompt/gitprompt.sh" ]; then
+    source "/opt/bash-git-prompt/gitprompt.sh"
+else
+    SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
+    SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
+    if [ $SSH2_IP ] || [ $SSH_IP ] ; then
+        SSH_FLAG="@\H"
+    fi
+	PS1="\[${HIBLACK}\][\[${HICYAN}\]\u$SSH_FLAG\[${HIBLACK}\]:\[${GREEN}\]\w\[${HIBLACK}\]:\[${RED}\]\j:\[${BLUE}\]\!\[${HIBLACK}\]]\[${RESET}\]\n\[${HIBLACK}\][\[${MAGENTA}\]\t\[${HIBLACK}\]]\[${HIWHITE}\]\$ \[${RESET}\]"
+fi

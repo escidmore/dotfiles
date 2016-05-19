@@ -1,0 +1,16 @@
+#!/bin/bash                                                                                                                                      
+
+# Make vim the default editor.
+export EDITOR="vim"
+
+# Don't clear the screen after quitting a man page.
+export MANPAGER="most -s"
+
+# Larger bash history (allow 32^3 entries; default is 500)
+HISTSIZE=32768
+HISTFILESIZE=${HISTSIZE}
+HISTCONTROL="erasedups:ignoreboth"
+
+# Make some commands not show up in history
+HISTIGNORE="ls:pwd:exit:date:* --help"
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
