@@ -1,0 +1,1 @@
+termcapinfo xterm*|rxvt*  te=\E[H\E[2J:ti=\E[H\E[2J:
