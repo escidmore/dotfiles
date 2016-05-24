@@ -28,6 +28,6 @@ alias less="less -R"
 alias grep="grep --color=auto"
 
 # Make tmux assume a 256 color terminal
-alias tmux="/usr/bin/tmux -2"
+alias tmux="tmux -2"
 
 alias ta="tmux attach"
