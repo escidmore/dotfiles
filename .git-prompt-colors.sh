@@ -84,11 +84,21 @@ define_undefined_git_prompt_colors() {
   		if [ $SSH2_IP ] || [ $SSH_IP ] ; then
   			local SSH_FLAG="@\H"
   		fi
-		GIT_PROMPT_START_USER="${HIBLACK}[${HICYAN}\u$SSH_FLAG${HIBLACK}:${GREEN}\w${HIBLACK}:${RED}\j:${BLUE}\!${HIBLACK}]${RESET}"; 
+		GIT_PROMPT_START_USER="\[${HIBLACK}\][\[${HICYAN}\]\u$SSH_FLAG\[${HIBLACK}\]:\[${GREEN}\]\w\[${HIBLACK}\]:\[${RED}\]\j:\[${BLUE}\]\!\[${HIBLACK}\]]\[${RESET}\]"; 
   fi
+
+  if [ -z ${GIT_PROMPT_START_ROOT+x} ]; then 
+        local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
+        local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
+        if [ $SSH2_IP ] || [ $SSH_IP ] ; then
+            local SSH_FLAG="@\H"
+        fi  
+        GIT_PROMPT_START_ROOT="\[${HIBLACK}\][\[${HIRED}\]\u$SSH_FLAG\[${HIBLACK}\]:\[${GREEN}\]\w\[${HIBLACK}\]:\[${RED}\]\j:\[${BLUE}\]\!\[${HIBLACK}\]]\[${RESET}\]"; 
+  fi
+
   if [ -z ${GIT_PROMPT_START_ROOT+x} ]; then GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"; fi
-  if [ -z ${GIT_PROMPT_END_USER+x} ]; then GIT_PROMPT_END_USER="\n${HIBLACK}[${MAGENTA}\t${HIBLACK}][_LAST_COMMAND_INDICATOR_${HIBLACK}]${HIWHITE}$ ${RESET}"; fi
-  if [ -z ${GIT_PROMPT_END_ROOT+x} ]; then GIT_PROMPT_END_ROOT="\n${HIBLACK}[${MAGENTA}\t${HIBLACK}][_LAST_COMMAND_INDICATOR_${HIBLACK}]${HIWHITE}# ${RESET}"; fi
+  if [ -z ${GIT_PROMPT_END_USER+x} ]; then GIT_PROMPT_END_USER="\n\[${HIBLACK}\][\[${MAGENTA}\]\t\[${HIBLACK}\]][_LAST_COMMAND_INDICATOR_\[${HIBLACK}\]]\[${HIWHITE}\]$ \[${RESET}\]"; fi
+  if [ -z ${GIT_PROMPT_END_ROOT+x} ]; then GIT_PROMPT_END_ROOT="\n\[${HIBLACK}\][\[${MAGENTA}\]\t\[${HIBLACK}\]][_LAST_COMMAND_INDICATOR_\[${HIBLACK}\]]\[${HIWHITE}\]# \[${RESET}\]"; fi
 
   # Please do not add colors to these symbols
   if [ -z ${GIT_PROMPT_SYMBOLS_AHEAD+x} ]; then GIT_PROMPT_SYMBOLS_AHEAD="↑·"; fi             # The symbol for "n versions ahead of origin"
