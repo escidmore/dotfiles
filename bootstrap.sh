@@ -8,12 +8,17 @@ function install() {
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     install
+	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 else
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         install
     fi
+	read -p "Install bash-git-prompt? (y/n) " -n 1
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+	fi
 fi
 
 unset install
