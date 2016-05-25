@@ -107,6 +107,8 @@ define_undefined_git_prompt_colors() {
   if [ -z ${GIT_PROMPT_SYMBOLS_NO_REMOTE_TRACKING+x} ]; then GIT_PROMPT_SYMBOLS_NO_REMOTE_TRACKING="L"; fi # This symbol is written after the branch, if the branch is not tracked
 }
 
+if [ -n "$TMUX" ]; then tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD"; fi
+
 # call only from theme file
 reload_git_prompt_colors() {
   if [[ "${GIT_PROMPT_THEME_NAME}" != $1 ]]; then
