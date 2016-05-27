@@ -29,7 +29,7 @@ if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 		#"ifstat_sys 30 255" \
 		"lan_ip 238 250" \
 		"wan_ip 236 250" \
-		"pwd 234 250" \
+		#"pwd 234 250" \
 		#"vcs_branch 235 250" \
 		#"vcs_compare 235 250" \
 		#"vcs_staged 235 250" \
@@ -41,7 +41,7 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
 		#"earthquake 234 250" \
-		#"mailcount 9 255" \
+		"mailcount 236 255" \
 		#"cpu 240 136" \
 		"load 238 250" \
 		#"tmux_mem_cpu_load 234 136" \
