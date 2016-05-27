@@ -1,3 +1,4 @@
 .config/fish/fish_history
 fish_history
 .bash_history
+fishd.*
