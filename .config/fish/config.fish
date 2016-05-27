@@ -1,8 +1,8 @@
 # Path to Oh My Fish install.
-set -gx OMF_PATH "/home/eve/.local/share/omf"
+set -gx OMF_PATH "${HOME}/.local/share/omf"
 
 # Customize Oh My Fish configuration path.
-#set -gx OMF_CONFIG "/home/eve/.config/omf"
+#set -gx OMF_CONFIG "${HOME}/.config/omf"
 
 set fish_greeting ""
 
