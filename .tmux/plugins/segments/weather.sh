@@ -149,7 +149,7 @@ __get_condition_symbol() {
 			echo "❅"
 			;;
 		"cloudy" | "mostly cloudy" | "partly cloudy" | "partly cloudy/windy")
-			echo ""
+			echo "☁"
 			;;
 		"tornado" | "tropical storm" | "hurricane" | "severe thunderstorms" | "thunderstorms" | "isolated thunderstorms" | "scattered thunderstorms")
 			#echo "⚡"

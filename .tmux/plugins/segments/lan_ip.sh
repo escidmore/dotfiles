@@ -6,7 +6,7 @@ run_segment() {
 			truncate -s 0 $lan_file
 	fi
 	if shell_is_bsd || shell_is_osx ; then
-		all_nics=$(ifconfig 2>/dev/null | awk -F':' '/^[a-z]/ && !/^lo/ && !/^vmnet/ && !/^vbox/ { print $1 }')
+		all_nics=$(ifconfig 2>/dev/null | awk -F':' '/^[a-z]/ && !/^lo/ { print $1 }')
 		for nic in ${all_nics[@]}; do
 			ipv4s_on_nic=$(ifconfig ${nic} 2>/dev/null | awk '$1 == "inet" { print $2 }')
 			for lan_ip in ${ipv4s_on_nic[@]}; do

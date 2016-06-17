@@ -1,0 +1,1 @@
+/Users/scidmev/.config/fisherman/bd/completions/bd.fish
