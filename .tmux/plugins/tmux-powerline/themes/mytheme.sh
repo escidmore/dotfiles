@@ -27,9 +27,14 @@ if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 		"hostname 242 250" \
 		#"ifstat 30 232" \
 		#"ifstat_sys 30 255" \
+<<<<<<< HEAD
 		"lan_ip 240 250" \
 		"wan_ip 238 250" \
         "battery 236 250" \
+=======
+		"lan_ip 238 250" \
+		"wan_ip 236 250" \
+>>>>>>> b11dfbb17755f04a4c1b9c00d92b742bb744a8d6
 		#"pwd 234 250" \
 		#"vcs_branch 235 250" \
 		#"vcs_compare 235 250" \
@@ -41,8 +46,13 @@ fi
 
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
+<<<<<<< HEAD
 		"earthquake 236 250" \
 		"mailcount 196 232" \
+=======
+		#"earthquake 234 250" \
+		"mailcount 236 255" \
+>>>>>>> b11dfbb17755f04a4c1b9c00d92b742bb744a8d6
 		#"cpu 240 136" \
 		"load 240 250" \
 		#"tmux_mem_cpu_load 234 136" \
