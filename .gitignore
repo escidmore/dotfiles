@@ -1,20 +1,16 @@
-<<<<<<< HEAD
-fish_history
+.bash_history
 .config/.mono/
+.config/fish/fish_history
 .config/fish/fishd.*
 .tmux/plugins/
 .tmux/resurrect/
 .vim.old/
 .vim/.gitignore
 .vim/.gitmodules
+.vim/README.md
 .vim/Rakefile
 .vim/bootstrap.sh
-.vim/README.md
 .viminfo
-=======
-.config/fish/fish_history
 fish_history
-.bash_history
 fishd.*
 tmux-buffer
->>>>>>> b11dfbb17755f04a4c1b9c00d92b742bb744a8d6
