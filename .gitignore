@@ -2,7 +2,6 @@
 .config/.mono/
 .config/fish/fish_history
 .config/fish/fishd.*
-.tmux/plugins/
 .tmux/resurrect/
 .vim.old/
 .vim/.gitignore
