@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package argu
 package brew
 package config
@@ -12,8 +11,5 @@ theme batman
 theme bobthefish
 theme budspencer
 theme coffeeandcode
-=======
-theme bobthefish
->>>>>>> b11dfbb17755f04a4c1b9c00d92b742bb744a8d6
 theme default
 theme shellder
