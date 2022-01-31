@@ -116,8 +116,6 @@ set -g pane-active-border-style bg=colour236,fg=colour51
 # The statusbar {
 
 set -g status-position bottom
-set -g status-right-length 80
-set -g status-left-length 20
 setw -g window-status-current-style fg=colour81,bg=colour238,bold
 setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
 setw -g window-status-style fg=colour138,bg=colour235,none
@@ -151,7 +149,6 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 set -g @plugin 'tmux-plugins/tmux-sidebar'
 set -g @plugin 'tmux-plugins/tmux-fpp'
-set -g @plugin 'erikw/tmux-powerline'
 
 set -g @fpp-key 'f'
 set -g @continuum-restore 'on'
@@ -167,14 +164,14 @@ set -g @prefix_highlight_copy_mode_attr 'fg=232,bg=colour240,bold'
 set-option -g status on
 set-option -g status-interval 1
 set-option -g status-justify "centre"
-set-option -g status-left-length 100
-set-option -g status-right-length 100
-set-option -g status-left "#(~/.tmux/plugins/tmux-powerline/powerline.sh left)"
-set-option -g status-right "#(~/.tmux/plugins/tmux-powerline/powerline.sh right)"
+set-option -g status-left-length 150
+set-option -g status-right-length 180
 # set-option -g default-command "reattach-to-user-namespace -l fish"
 # bind-key -T copy-mode-vi WheelUpPane scroll-up
 # bind-key -T copy-mode-vi WheelDownPane scroll-down
 
+run-shell "powerline-daemon -q"
+source "/usr/share/powerline/bindings/tmux/powerline.conf"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
