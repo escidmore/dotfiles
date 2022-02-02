@@ -3,6 +3,8 @@ package brew
 package config
 package expand
 package extract
+package https://github.com/jethrokuan/fzf
+package pj
 package shark
 package thefuck
 package weather

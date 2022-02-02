@@ -127,6 +127,7 @@ with a submodule.
 For more information on how to customize Janus, you might want to take
 a look at the [Customization wiki
 page](https://github.com/carlhuda/janus/wiki/Customization).
+Additional you can see [Example](https://github.com/khusnetdinov/.janus) of customization.
 
 # Intro to VIM
 
@@ -136,7 +137,7 @@ Here're some tips in case you've never used VIM before:
 
 * Type `vimtutor` into a shell to go through a brief interactive
   tutorial inside VIM.
-* Read the slides at [VIM: Walking Without Crutches](http://walking-without-crutches.heroku.com/#1).
+* Watch this presentation at [VIM: Walking Without Crutches](https://vimeo.com/16458939) or read the [slides on Speaker Deck](https://speakerdeck.com/nelstrom/vim-precision-editing-at-the-speed-of-thought).
 * Watch the screencasts at [vimcasts.org](http://vimcasts.org/)
 * Watch Derek Wyatt's energetic tutorial videos at [his site](http://derekwyatt.org/vim/tutorials/)
 * Read wycats' perspective on learning Vim at
@@ -280,10 +281,14 @@ based on the current context.
 
 ## [Syntastic](https://github.com/scrooloose/syntastic/)
 
-Syntastic is a syntax checking plugin that runs buffers through external syntax
+Syntastic is a syntax checking plugin that runs files through external syntax
 checkers as they are saved and opened. If syntax errors are detected, the user
 is notified and is happy because they didn't have to compile their code or
 execute their script to find them.
+
+Please see [`:help
+syntastic`](https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic.txt)
+for more information.
 
 ## [Tagbar](https://github.com/majutsushi/tagbar)
 
@@ -363,6 +368,8 @@ been removed. You can also stage and revert individual hunks.
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
+**Customizations**: Janus binds `<leader>zw` to `:ZoomWin`
+
 ## [JSON](https://github.com/elzr/vim-json)
 
 Better JSON and JSONP with distinct highlighting for keywords versus
@@ -371,8 +378,6 @@ quotes concealed (disable with `let g:vim_json_syntax_conceal = 0` in
 `~/.vimrc.after`, folding of {...} and [...] blocks (enable with
 `:setlocal foldmethod=syntax`, and JSON-specific warnings highlighted in
 red.
-
-**Customizations**: Janus binds `<leader>zw` to `:ZoomWin`
 
 ## [BufferGator](https://github.com/jeetsukumaran/vim-buffergator)
 
