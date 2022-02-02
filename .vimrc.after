@@ -41,8 +41,6 @@ set hlsearch
 set ignorecase
 " Hilight dynamically as pattern is typed
 set incsearch
-" Always show status line
-set laststatus=2
 " Disable error bells
 set noerrorbells
 " Don't reset cursor to start of line when moving around.
@@ -71,8 +69,19 @@ if has("autocmd")
         " Treat .json files as .js
         autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
-colorscheme distinguished
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono:h13
+
 set list listchars=tab:»·,trail:·
 set splitbelow
 set splitright
+
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+
+colorscheme gotham256

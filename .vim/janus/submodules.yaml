@@ -24,6 +24,7 @@ submodules:
   #
   colors:
     base16-vim:
+    darcula:
     getafe:
     github:
     irblack:
@@ -41,52 +42,15 @@ submodules:
   # Langs
   #
   langs:
-    arduino:
-    coffeescript:
-      categories:
-        - coffeescript
-        - syntax
     csv:
       categories:
         - csv
         - syntax
-    cucumber:
-      categories:
-        - ruby
-        - rails
-        - syntax
-        - behavior driven development
-    elixir:
-    erlang:
-    git:
-      categories:
-        - git
-        - syntax
-    haml:
-      categories:
-        - ruby
-        - rails
-        - syntax
-    haskell:
-    javascript:
-    less:
-    markdown:
-    mustache_handlebars:
     minitest:
     nodejs:
-    puppet:
     rails:
-    rspec:
-    ruby:
-    scala:
-    scss:
-    slim:
-    textile:
-    clojure:
-    go:
-    liquid:
     rdoc:
-    json:
+    vim-polyglot:
 
 
   # Tools
@@ -108,7 +72,6 @@ submodules:
     indent-object:
     kwbd:
     eunuch:
-    matchit:
     narrowregion:
     nerdcommenter:
     nerdtree:
