@@ -1,0 +1,3 @@
+[submodule ".janus/terminus"]
+	path = .janus/terminus
+	url = https://github.com/wincent/terminus.git
