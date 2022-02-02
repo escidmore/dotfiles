@@ -1,1 +1,1 @@
-/Users/scidmev/.vim/janus/vim/vimrc
+/home/eve/.vim/janus/vim/vimrc
