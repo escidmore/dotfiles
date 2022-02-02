@@ -33,8 +33,6 @@ set number
 syntax on
 " Hilight current line
 set cursorline
-" Make tabs as wide as 4 spaces
-set tabstop=4
 " Hilight searches
 set hlsearch
 " Ignore case of searches
