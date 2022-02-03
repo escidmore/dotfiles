@@ -1,1 +1,0 @@
-/Users/scidmev/.config/fisherman/bd/functions/bd.fish
