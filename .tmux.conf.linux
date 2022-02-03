@@ -158,7 +158,6 @@ set -g @prefix_highlight_fg 'colour232'
 set -g @prefix_highlight_bg 'colour240,bold'
 set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_copy_mode_attr 'fg=232,bg=colour240,bold'
-set -g @1password-key 'o'
 
 set -g focus-events on
 set-option -g status on
