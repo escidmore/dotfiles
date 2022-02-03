@@ -277,3 +277,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>r  :<C-u>CocListResume<CR>
 " Open preview
 nnoremap <silent><nowait> <space>p  :<C-u>CocCommand markdown-preview-enhanced.openPreview<CR>
+" Open preview
+nnoremap <silent><nowait> <space>f  :<C-u>CocCommand markdownlint.fixAll<CR>
