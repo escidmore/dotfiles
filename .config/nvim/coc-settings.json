@@ -1,0 +1,17 @@
+{
+	"webview.colorStrategy": "dark",
+	"webview.primaryColors": {
+		"dark": "#242424",
+		"light": "#2288ff",
+	}
+	"markdownlint.onChange": true,
+	"markdownlint.onOpen": true,
+	"markdownlint.config": {
+		"line-length": false,
+		"fenced-code-language": false
+	},
+	"markdown-preview-enhanced.scrollSync": true,
+	"markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+	"markdown-preview-enhanced.previewTheme": "monokai.css"
+}
+
