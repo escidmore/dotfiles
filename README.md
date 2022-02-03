@@ -31,4 +31,3 @@ cd; curl -#L https://github.com/escidmore/dotfiles/tarball/master | tar -xzv --s
 ```
 
 To update later on, just run that command again.
-
