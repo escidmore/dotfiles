@@ -26,6 +26,8 @@ set modeline
 set modelines=4
 " Enable per-directory .vimrc files and disable unsafe commands in them
 set exrc
+" Don't show keypresses in Normal mode
+set noshowcmd
 set secure
 " Enable line numbers
 set number
