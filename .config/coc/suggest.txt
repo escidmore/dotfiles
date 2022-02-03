@@ -1,2 +1,21 @@
+fa|false|json
+"fen|"fenced-code-language": ${1:true}|json
+fal|false|json
+"line|"line-length": ${1:true}|json
+"markdown|"markdownlint.config": {$1},|json
+t|true|json
+onOpen|"markdownlint.onOpen": ${1:true},|json
+"markd|"markdownlint.onOpen": ${1:true},|json
+"markdownlint|"markdownlint.onChange": ${1:true},|json
+|"monokai.css"|json
+"markdown-previ|"markdown-preview-enhanced.previewTheme": $1|json
+tr|true|json
+en|markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited|json
+true|signature.triggerSignatureWait|json
+scrollSyn|"markdown-preview-enhanced.scrollSync": ${1:true}|json
+"markdown-preview-enhanced.sync|"markdown-preview-enhanced.scrollSync": ${1:true}|json
+"webview.pri|"webview.primaryColors": {|json
+|"dark"|json
+"webview.col|"webview.colorStrategy": $1|json
 pre|preview|around
 preview|preview|around

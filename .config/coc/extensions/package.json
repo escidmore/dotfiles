@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "coc-json": ">=1.4.1",
     "coc-markdown-preview-enhanced": ">=0.4.1",
-    "coc-webview": ">=0.10.1"
+    "coc-markdownlint": ">=1.12.3",
+    "coc-webview": ">=0.10.1",
+    "coc-yaml": ">=1.6.1"
   }
 }
