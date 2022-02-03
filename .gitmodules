@@ -1,3 +1,40 @@
 [submodule ".janus/terminus"]
 	path = .janus/terminus
-	url = https://github.com/wincent/terminus.git
+	url = https://github.com/wincent/terminus
+[submodule ".janus/vim-airline"]
+	path = .janus/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".janus/vim-airline-themes"]
+	path = .janus/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule ".tmux/plugins/tmux-continuum"]
+	path = .tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule ".tmux/plugins/tmux-fpp"]
+	path = .tmux/plugins/tmux-fpp
+	url = https://github.com/tmux-plugins/tmux-fpp
+[submodule ".tmux/plugins/tmux-logging"]
+	path = .tmux/plugins/tmux-logging
+	url = https://github.com/tmux-plugins/tmux-logging
+[submodule ".tmux/plugins/tmux-prefix-highlight"]
+	path = .tmux/plugins/tmux-prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-logging
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule ".tmux/plugins/tmux-sensible"]
+	path = .tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule ".tmux/plugins/tmux-sessionist"]
+	path = .tmux/plugins/tmux-sessionist
+	url = https://github.com/tmux-plugins/tmux-sessionist
+[submodule ".tmux/plugins/tmux-sidebar"]
+	path = .tmux/plugins/tmux-sidebar
+	url = https://github.com/tmux-plugins/tmux-sidebar
+[submodule "janus/vim/tools/visualstar"]
+	path = .vim/janus/vim/toolss/visualstar
+	url = https://github.com/thinca/vim-visualstar.git
+	ignore = untracked
+[submodule ".vim"]
+	path = .vim
+	url = https://github.com/carlhuda/janus
