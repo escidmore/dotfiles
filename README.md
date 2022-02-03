@@ -2,13 +2,13 @@
 Much of this was shamelessly borrowed (with permission) from https://github.com/kkragenbrink/dotfiles
 
 ## Installation
-You can clone the repository wherever you want. (I like to keep it in ```~/repos/dotfiles```.)  The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I like to keep it in `~/repos/dotfiles`.)  The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```
 git clone https://github.com/escidmore/dotfiles.git && cd dotfiles && ./bootstrap.sh
 ```
 
-To update, ```cd``` into your local ```dotfiles``` repository and then:
+To update, `cd` into your local `dotfiles` repository and then:
 
 ```
 ./boostrap.sh

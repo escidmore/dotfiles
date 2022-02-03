@@ -1,4 +1,4 @@
-set -g default-terminal "xterm-256color"
+set -g default-terminal "screen-256color"
 set -g default-shell /usr/bin/fish
 
 # Prefix: Use Ctrl-A.
@@ -139,7 +139,7 @@ set -g @plugin 'tmux-plugins/tmux-sessionist'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'tmux-plugins/tmux-logging'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 set -g @plugin 'tmux-plugins/tmux-sidebar'

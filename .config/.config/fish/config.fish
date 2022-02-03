@@ -17,10 +17,7 @@ set fish_greeting ""
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-#alias vi "mvim -g -c 'au VimLeave * !open -a iTerm'"
-#alias vim "mvim -g -c 'au VimLeave * !open -a iTerm'"
-#alias vi "vim -v"
-#alias vim "vim-v"
+alias op-signin "eval (op signin)"
 
 # Set $FILTER
 set FILTER percol
