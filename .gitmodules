@@ -44,3 +44,6 @@
 [submodule ".janus/vim-tmux-focus-events"]
 	path = .janus/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events
+[submodule ".janus/vim-gotham"]
+	path = .janus/vim-gotham
+	url = https://github.com/whatyouhide/vim-gotham
