@@ -1,6 +1,6 @@
 function fisher --argument-names cmd --description "A plugin manager for Fish"
     set --query fisher_path || set --local fisher_path $__fish_config_dir
-    set --local fisher_version 4.2.0-rc-2
+    set --local fisher_version 4.3.1
     set --local fish_plugins $__fish_config_dir/fish_plugins
 
     switch "$cmd"
@@ -15,6 +15,8 @@ function fisher --argument-names cmd --description "A plugin manager for Fish"
             echo "Options:"
             echo "       -v or --version  Print version"
             echo "       -h or --help     Print this help message"
+            echo "Variables:"
+            echo "       \$fisher_path  Plugin installation path. Default: ~/.config/fish"
         case ls list
             string match --entire --regex -- "$argv[2]" $_fisher_plugins
         case install update remove
@@ -68,7 +70,7 @@ function fisher --argument-names cmd --description "A plugin manager for Fish"
             set --local pid_list
             set --local source_plugins
             set --local fetch_plugins $update_plugins $install_plugins
-            string unescape "\x1b[1mfisher $cmd version $fisher_version\x1b[22m"
+            echo (set_color --bold)fisher $cmd version $fisher_version(set_color normal)
 
             for plugin in $fetch_plugins
                 set --local source (command mktemp -d)
@@ -84,8 +86,9 @@ function fisher --argument-names cmd --description "A plugin manager for Fish"
                         set name (string split \@ $plugin) || set name[2] HEAD
                         set url https://codeload.github.com/\$name[1]/tar.gz/\$name[2]
 
-                        string unescape \"Fetching \x1b[4m\$url\x1b[24m\"
-                        if curl --silent \$url | tar --extract --gzip --directory \$temp --file - 2>/dev/null
+                        echo Fetching (set_color --underline)\$url(set_color normal)
+
+                        if curl --silent \$url | tar -xzC \$temp -f - 2>/dev/null
                             command cp -Rf \$temp/*/* $source
                         else
                             echo fisher: Invalid plugin name or host unavailable: \\\"$plugin\\\" >&2
@@ -94,8 +97,7 @@ function fisher --argument-names cmd --description "A plugin manager for Fish"
                         command rm -rf \$temp
                     end
 
-                    set files $source/* && set files (string match --regex -- .+\.fish\\\$ \$files) || exit
-                    command mv -f \$files $source/functions 2>/dev/null
+                    set files $source/* && string match --quiet --regex -- .+\.fish\\\$ \$files
                 " &
 
                 set --append pid_list (jobs --last --pid)
@@ -197,25 +199,6 @@ function fisher --argument-names cmd --description "A plugin manager for Fish"
 end
 
 ## Migrations ##
-if functions --query _fisher_self_update || test -e $__fish_config_dir/fishfile # 3.x
-    function _fisher_migrate
-        function _fisher_complete
-            fisher install jorgebucaran/fisher >/dev/null 2>/dev/null
-            functions --erase _fisher_complete
-        end
-        set --query XDG_DATA_HOME || set XDG_DATA_HOME ~/.local/share
-        set --query XDG_CACHE_HOME || set XDG_CACHE_HOME ~/.cache
-        set --query XDG_CONFIG_HOME || set XDG_CONFIG_HOME ~/.config
-        set --query fisher_path || set fisher_path $__fish_config_dir
-        test -e $__fish_config_dir/fishfile && command awk '/#|^gitlab|^ *$/ { next } $0' <$__fish_config_dir/fishfile >>$__fish_config_dir/fish_plugins
-        command rm -rf $__fish_config_dir/fishfile $fisher_path/{conf.d,completions}/fisher.fish {$XDG_DATA_HOME,$XDG_CACHE_HOME,$XDG_CONFIG_HOME}/fisher
-        functions --erase _fisher_migrate _fisher_copy_user_key_bindings _fisher_ls _fisher_fmt _fisher_self_update _fisher_self_uninstall _fisher_commit _fisher_parse _fisher_fetch _fisher_add _fisher_rm _fisher_jobs _fisher_now _fisher_help
-        fisher update
-    end
-    echo "Upgrading to Fisher 4 -- learn more at" (set_color --bold --underline)"https://git.io/fisher-4"(set_color normal)
-    _fisher_migrate >/dev/null 2>/dev/null
-end
-
 function _fisher_fish_postexec --on-event fish_postexec
     if functions --query _fisher_list
         fisher update >/dev/null 2>/dev/null
