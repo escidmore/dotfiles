@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "coc-git": ">=2.4.7",
     "coc-json": ">=1.4.1",
     "coc-markdown-preview-enhanced": ">=0.4.1",
     "coc-markdownlint": ">=1.12.3",
