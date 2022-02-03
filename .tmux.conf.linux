@@ -59,11 +59,6 @@ bind-key -Tcopy-mode-vi y send -X copy-pipe "perl -ln0e 's/(^  |\n)//mg if (/^ht
 unbind -T copy-mode-vi Enter
 bind-key -T copy-mode-vi Enter send -X copy-pipe "perl -ln0e 's/(^  |\n)//mg if (/^http/); print' | xclip -i"
 
-# present a menu of URLs to open from the visible pane
-bind-key u capture-pane \;\
-	save-buffer ~/.tmux/tmux-buffer \;\
-	split-window -l 10 "urlview ~/.tmux/tmux-buffer"
-
 # don't rename windows automatically
 set-option -g allow-rename off
 
@@ -163,6 +158,7 @@ set -g @prefix_highlight_fg 'colour232'
 set -g @prefix_highlight_bg 'colour240,bold'
 set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_copy_mode_attr 'fg=232,bg=colour240,bold'
+set -g @1password-key 'o'
 
 set -g focus-events on
 set-option -g status on
