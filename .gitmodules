@@ -47,3 +47,6 @@
 [submodule ".janus/vim-gotham"]
 	path = .janus/vim-gotham
 	url = https://github.com/whatyouhide/vim-gotham
+[submodule ".janus/coc.nvim"]
+	path = .janus/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
