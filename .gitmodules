@@ -50,3 +50,4 @@
 [submodule ".janus/coc.nvim"]
 	path = .janus/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+	branch = release

@@ -1,6 +1,8 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-git pull
+# git pull
+
+git submodule update --force --recursive --init --remote
 
 function install() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~

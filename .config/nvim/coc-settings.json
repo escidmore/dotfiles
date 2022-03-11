@@ -2,8 +2,8 @@
 	"webview.colorStrategy": "dark",
 	"webview.primaryColors": {
 		"dark": "#242424",
-		"light": "#2288ff",
-	}
+		"light": "#2288ff"
+	},
 	"markdownlint.onChange": true,
 	"markdownlint.onOpen": true,
 	"markdownlint.config": {
